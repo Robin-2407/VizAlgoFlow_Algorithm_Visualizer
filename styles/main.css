@@ -1,0 +1,116 @@
+@import url(./variables.css);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--primary-color);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-tooltip);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: var(--spacing-small);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.logo a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  padding: 0 8px;
+  font-family: var(--heading-font);
+  font-size: 1.3rem;
+  font-weight: var(--font-medium);
+}
+
+.operations a {
+  position: relative;
+  margin-left: 15px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.operations a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2.5px;
+  background-color: var(--black);
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease;
+  color: var(--extra-color-1);
+}
+
+.operations a:hover {
+  color: var(--extra-color-1);
+}
+
+.operations a:hover::after {
+  width: 100%;
+}
+
+.operations a.active {
+  color: var(--extra-color-2);
+}
+
+.operations a.active::after {
+  width: 100%;
+}
+
+.operations a:not(.active):hover {
+  color: var(--extra-color-1);
+}
+
+.operations a:not(.active) {
+  color: var(--extra-color-1);
+}
+
+#theme-switch {
+  height: 35px;
+  width: 35px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--base-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0.5rem;
+  right: 1rem;
+}
+
+#theme-switch svg {
+  fill: var(--black);
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
+}
