@@ -25,64 +25,33 @@ header {
 .logo-container {
   display: flex;
   align-items: center;
+  margin-left: var(--spacing-3);
 }
 
 .logo a {
   font-family: var(--font-heading);
-  font-size: var(--text-3xl);
+  font-size: var(--text-2xl);
   color: var(--color-text-primary);
   font-weight: var(--font-medium);
   text-decoration: none;
+}
+
+.operations {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
 }
 
 .operations a {
   margin-left: var(--spacing-6);
   font-family: var(--font-main);
   font-size: var(--text-lg);
-  color: var(--color-text-primary);
-  text-decoration: none;
-  padding: var(--spacing-0) var(--spacing-2);
-  border-radius: var(--spacing-1);
-  border: 2px solid transparent;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-#theme-switch {
-  height: 40px;
-  width: 40px;
-  padding: 0;
-  border: 0.5px solid var(--color-secondary);
-  border-radius: 50%;
-  background-color: var(--color-primary-50);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 15px;
-  right: 15px;
-}
-
-#theme-switch svg {
-  fill: var(--color-text-secondary);
-}
-
-#theme-switch svg:last-child {
-  display: none;
-}
-.darkmode #theme-switch svg:first-child {
-  display: none;
-}
-.darkmode #theme-switch svg:last-child {
-  display: block;
-}
-
-.operations a {
-  position: relative;
-  text-decoration: none;
-  font-family: var(--font-main);
+  font-weight: var(--font-normal);
   color: var(--color-text-secondary);
-  font-size: var(--text-lg);
-  padding: var(--spacing-0) var(--spacing-2);
+  text-decoration: none;
+  padding: var(--spacing-0) var(--spacing-1);
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .operations a:after {
@@ -92,8 +61,8 @@ header {
   height: 3px;
   width: 0;
   left: 0;
-  bottom: -10px;
-  transition: 0.3s;
+  bottom: -6px;
+  transition: 0.2s;
 }
 
 .operations a:hover {
@@ -106,7 +75,102 @@ header {
   color: var(--color-text-primary);
 }
 
+.operations a.active {
+  color: var(--color-text-primary);
+}
+
 .operations a.active:after {
   width: 100%;
   background-color: var(--color-primary);
+  color: var(--color-text-primary);
+}
+
+#theme-switch {
+  height: var(--spacing-9);
+  width: var(--spacing-9);
+  padding: 0;
+  border: 0.5px solid var(--color-secondary);
+  border-radius: 50%;
+  background-color: var(--color-primary-50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0.4rem;
+  right: var(--spacing-3);
+}
+
+#theme-switch svg {
+  fill: var(--color-text-secondary);
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
+}
+
+.dropdown-menu {
+  min-width: 150px;
+  left: 15px;
+}
+
+.dropdown-item {
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+}
+
+.dropdown-item:hover {
+  background-color: var(--color-primary-100);
+  color: var(--color-primary);
+}
+
+.darkmode .dropdown-menu {
+  background-color: var(--color-surface); /* Set background color */
+  border-color: var(--color-border); /* Set border color */
+}
+
+.darkmode .dropdown-item {
+  color: var(--color-text-secondary); /* Set text color */
+}
+
+.darkmode .dropdown-item:hover {
+  background-color: var(--color-primary-200); /* Set hover color */
+  color: var(--color-text-primary); /* Change text color on hover */
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .logo-container {
+    text-align: center;
+  }
+
+  .logo a {
+    font-size: var(--text-xl);
+  }
+
+  .dropdown-toggle{
+    width: auto;
+  }
+
+  .dropdown-menu {
+    background-color: #333; /* Adjust colors for dark mode or visibility */
+  }
+
+  /* Example: Stack elements vertically */
+  .navbar .operations {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Add more styles as needed */
 }
