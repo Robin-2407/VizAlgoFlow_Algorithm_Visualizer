@@ -116,6 +116,10 @@ header {
   display: block;
 }
 
+#drop-down-menu {
+  display: none;
+}
+
 .dropdown-menu {
   min-width: 150px;
   left: 15px;
