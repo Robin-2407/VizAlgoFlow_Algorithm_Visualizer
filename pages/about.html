@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About VizAlgoFlow</title>
+    <link rel="stylesheet" href="../styles/pages/about.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+</head>
+
+<body>
+    <a href="../index.html" class="back-icon">← Back</a>
+    <div class="container">
+        <header>
+            <h1>About VizAlgoFlow</h1>
+            <p>Enhancing Understanding Through Visualization</p>
+        </header>
+
+        <h2>What is VizAlgoFlow?</h2>
+        <p>VizAlgoFlow is an interactive platform designed to visualize various algorithms and data structures, making
+            complex concepts accessible to learners and practitioners in computer science. The goal of this project is
+            to provide a comprehensive understanding of how algorithms work through real-time visualization, allowing
+            users to observe the process step by step.</p>
+
+        <h2>Why VizAlgoFlow?</h2>
+        <p>Algorithms are the backbone of computer science, and understanding how they function is essential for both
+            aspiring developers and seasoned programmers. With VizAlgoFlow, we aim to demystify these concepts through
+            dynamic visualizations that bring algorithms to life.</p>
+
+        <h2>Key Features:</h2>
+        <ul>
+            <li><strong>Multi-Page Structure:</strong> Organized into separate pages for various sorting and searching
+                algorithms, allowing users to focus without feeling overwhelmed.</li>
+            <li><strong>Interactive Visualizations:</strong> Users can input their own datasets, visually represented,
+                observing step-by-step transformations as the algorithm executes.</li>
+            <li><strong>Customizable Inputs:</strong> Flexibility to generate random arrays, specify the number of
+                elements, and include duplicates.</li>
+            <li><strong>Responsive Design:</strong> Fully functional on all devices, designed with a mobile-first
+                approach.</li>
+            <li><strong>Dark and Light Themes:</strong> Supports both themes to enhance user experience and
+                accessibility.</li>
+            <li><strong>Algorithm Descriptions and Complexity Analysis:</strong> Each algorithm page includes a
+                comprehensive description and complexity analysis to aid understanding.</li>
+        </ul>
+
+        <h2>Understanding Data Structures and Algorithms:</h2>
+        <p>Data Structures and Algorithms (DSA) are fundamental concepts that every programmer must master. They form
+            the basis for writing efficient code and solving complex problems. Understanding these concepts allows
+            developers to:</p>
+        <ul>
+            <li><strong>Optimize Performance:</strong> Choosing the right data structure can significantly reduce time
+                and space complexity in applications.</li>
+            <li><strong>Improve Problem Solving:</strong> A solid grasp of algorithms helps in breaking down problems
+                and devising efficient solutions.</li>
+            <li><strong>Enhance Software Development:</strong> Efficient algorithms are crucial for applications that
+                handle large datasets, ensuring they perform well under load.</li>
+        </ul>
+
+        <h2>Common Data Structures:</h2>
+        <ul>
+            <li><strong>Arrays:</strong> A collection of elements identified by index or key, allowing for efficient
+                access.</li>
+            <li><strong>Linked Lists:</strong> A sequential collection of elements, where each element points to the
+                next, allowing for efficient insertions and deletions.</li>
+            <li><strong>Stacks:</strong> A Last In First Out (LIFO) structure, used for function calls, backtracking,
+                and more.</li>
+            <li><strong>Queues:</strong> A First In First Out (FIFO) structure, ideal for scheduling and resource
+                sharing.</li>
+            <li><strong>Trees:</strong> A hierarchical structure ideal for representing relationships and hierarchies.
+            </li>
+        </ul>
+
+        <div class="button-container">
+            <a href="../index.html" class="back-button">Back to Homepage</a>
+        </div>
+    </div>
+
+    <script>// Check local storage for the theme preference
+        let darkmode = localStorage.getItem("darkmode");
+        const body = document.body;
+
+        // Enable or disable dark mode based on user preference
+        const enableDarkmode = () => {
+            body.classList.add("darkmode");
+        };
+
+        const disableDarkmode = () => {
+            body.classList.remove("darkmode");
+        };
+
+        // Initialize dark mode on page load if previously enabled
+        if (darkmode === "active") {
+            enableDarkmode();
+        }
+
+        // Function to update the theme
+        const updateTheme = () => {
+            darkmode = localStorage.getItem("darkmode");
+            darkmode === "active" ? enableDarkmode() : disableDarkmode();
+        };
+
+        // Listen for changes in the theme switch from the header
+        document.getElementById("theme-switch").addEventListener("click", updateTheme);
+
+        // Optional: If you want the about page to also reflect changes dynamically,
+        // you can call the updateTheme function here as well on page load.
+    </script>
+</body>
+
+</html>

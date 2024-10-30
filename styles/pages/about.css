@@ -1,0 +1,157 @@
+@import url(../variables.css);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+    font-family: var(--font-roboto);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    margin: 0;
+    padding: var(--spacing-6);
+    line-height: var(--leading-normal);
+}
+
+header {
+    text-align: center;
+    margin-bottom: var(--spacing-10);
+}
+
+h1 {
+    font-family: var(--font-roboto);
+    font-size: var(--text-4xl);
+    margin-bottom: var(--spacing-4);
+    color: var(--color-primary);
+}
+
+h2 {
+    font-family: var(--font-roboto);
+    font-size: var(--text-2xl);
+    color: var(--color-primary);
+    margin-top: var(--spacing-8);
+    margin-bottom: var(--spacing-4);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: var(--spacing-2);
+}
+
+p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-4);
+    font-size: var(--text-base);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: var(--spacing-4) 0;
+}
+
+li {
+    background-color: var(--color-surface);
+    padding: var(--spacing-4);
+    margin: var(--spacing-2) 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+strong {
+    color: var(--color-primary);
+    font-weight: var(--font-semibold);
+}
+
+.back-icon {
+    display: inline-block;
+    padding: var(--spacing-2) var(--spacing-4);
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: var(--spacing-4);
+    left: var(--spacing-4);
+    font-size: var(--text-base);
+}
+
+.back-icon:hover {
+    background-color: var(--color-primary-600);
+    transform: translateX(-3px);
+}
+
+.container {
+    max-width: var(--breakpoint-lg);
+    margin: 0 auto;
+    padding: var(--spacing-4);
+}
+
+/* Back button at bottom styles */
+.back-button {
+    display: inline-block;
+    padding: var(--spacing-4) var(--spacing-6);
+    background-color: var(--color-primary);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: var(--spacing-12);
+    font-size: var(--text-lg);
+    text-align: center;
+}
+
+.back-button:hover {
+    background-color: var(--color-primary-600);
+    transform: scale(1.05);
+}
+
+.button-container {
+    text-align: center;
+    margin-top: var(--spacing-12);
+}
+
+
+@media (max-width: 768px) {
+    body {
+        padding: var(--spacing-10);
+    }
+
+    h1 {
+        font-size: var(--text-3xl);
+    }
+
+    h2 {
+        font-size: var(--text-xl);
+    }
+
+    .back-icon {
+        font-size: var(--text-sm);
+        padding: var(--spacing-2);
+    }
+
+    .back-button {
+        padding: var(--spacing-3) var(--spacing-4);
+        font-size: var(--text-base);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: var(--text-2xl);
+    }
+
+    h2 {
+        font-size: var(--text-lg);
+    }
+
+    p, li {
+        font-size: var(--text-sm);
+    }
+}
