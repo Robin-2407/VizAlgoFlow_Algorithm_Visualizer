@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - VizAlgoFlow</title>
+    <link rel="stylesheet" href="../styles/pages/contact.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+</head>
+
+<body>
+    <a href="../index.html" class="back-icon">← Back</a>
+    <div class="contact-container">
+        <h1 class="form-title">Contact VizAlgoFlow</h1>
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="cdf98a78-11c9-4f6c-b7ab-875859f3d3ad">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+
+    <script>
+        let darkmode = localStorage.getItem("darkmode");
+        const body = document.body;
+
+        // Enable or disable dark mode based on user preference
+        const enableDarkmode = () => {
+            body.classList.add("darkmode");
+        };
+
+        const disableDarkmode = () => {
+            body.classList.remove("darkmode");
+        };
+
+        // Initialize dark mode on page load if previously enabled
+        if (darkmode === "active") {
+            enableDarkmode();
+        }
+
+        // Function to update the theme
+        const updateTheme = () => {
+            darkmode = localStorage.getItem("darkmode");
+            darkmode === "active" ? enableDarkmode() : disableDarkmode();
+        };
+
+        // Listen for changes in the theme switch from the header
+        document.getElementById("theme-switch").addEventListener("click", updateTheme);
+
+        // Optional: If you want the about page to also reflect changes dynamically,
+        // you can call the updateTheme function here as well on page load.
+    </script>
+</body>
+
+</html>
